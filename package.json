@@ -1,0 +1,17 @@
+{
+  "name": "aws-serverless-template",
+  "version": "1.0.0",
+  "description": "A small template to get started with AWS Lambda, the Serverless Framework & a minimalist Express app",
+  "main": "local.js",
+  "scripts": {
+    "start": "nodemon NODE_ENV=development local.js",
+    "deploy": "serverless deploy",
+    "deploy-remove": "serverless remove"
+  },
+  "author": "Chris Hurst",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.3",
+    "serverless-http": "^2.0.0"
+  }
+}

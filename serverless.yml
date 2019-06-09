@@ -1,0 +1,26 @@
+service: aws-serverless-template
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: production
+  region: eu-west-1
+
+functions:
+  app:
+    #name: # optional, Deployed Lambda name
+    #description: My function # The description of your function.
+    memorySize: 512 # memorySize for this specific function (default size is 1024)
+    #vpc: # Optional VPC. But if you use VPC then both subproperties (securityGroupIds and subnetIds) are required
+    handler: index.app
+    events:
+      - http:
+          path: /
+          method: ANY
+          cors: true
+      - http:
+          path: /{proxy+}
+          method: ANY
+          cors: true
+# plugins:
+#   - serverless-offline
